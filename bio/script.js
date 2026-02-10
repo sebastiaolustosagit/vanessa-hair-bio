@@ -1,5 +1,5 @@
 /**
- * Vanessa Hair - Bio
+ * Vanessa Barreto - Bio
  */
 
 document.addEventListener('DOMContentLoaded', () => {

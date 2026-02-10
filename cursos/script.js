@@ -1,5 +1,5 @@
 /**
- * Vanessa Hair - Cursos
+ * Vanessa Barreto - Cursos
  */
 
 document.addEventListener('DOMContentLoaded', () => {
