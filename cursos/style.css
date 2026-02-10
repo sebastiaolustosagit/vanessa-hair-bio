@@ -1,108 +1,258 @@
 /* ==========================================
-   CURSOS - ESTILOS ADICIONAIS
+   CURSOS - LAYOUT VITRINE
    O CSS base vem de /bio/style.css
    ========================================== */
 
-/* Ajuste do wrapper pra acomodar grid */
 .page-wrapper {
-    max-width: 480px;
+    max-width: 540px;
 }
 
 /* ==========================================
-   COURSES GRID
+   PRODUCT CARDS
    ========================================== */
 
-.courses-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-bottom: 32px;
-}
-
-/* ==========================================
-   COURSE CARD
-   ========================================== */
-
-.course-card {
+.products {
     display: flex;
     flex-direction: column;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.product-card {
     background: var(--color-bg-card);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.course-card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+.product-card:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Thumbnail */
-.card-thumb {
+/* Image */
+.product-img {
     position: relative;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
     background: #1a1a2e;
 }
 
-.card-thumb img {
+.product-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
 }
 
-.course-card:hover .card-thumb img {
-    transform: scale(1.05);
+.product-card:hover .product-img img {
+    transform: scale(1.03);
 }
 
-/* Info */
-.card-info {
-    padding: 12px;
-    flex: 1;
+/* Gradient fallback for images we don't have yet */
+.product-img--gradient {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg,
+            color-mix(in srgb, var(--card-accent, #FF6A9C) 15%, #0d0d1a) 0%,
+            color-mix(in srgb, var(--card-accent, #FF6A9C) 30%, #1a1a2e) 50%,
+            color-mix(in srgb, var(--card-accent, #FF6A9C) 10%, #0d0d1a) 100%);
 }
 
-.card-info h3 {
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    font-weight: 600;
-    line-height: 1.3;
+.product-img-icon {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Body */
+.product-body {
+    padding: 20px;
+}
+
+/* Tag / Badge */
+.product-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: rgba(255, 106, 156, 0.15);
+    color: #FF6A9C;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.product-tag--mentoria {
+    background: rgba(212, 165, 116, 0.15);
+    color: #D4A574;
+}
+
+/* Title */
+.product-title {
+    font-family: var(--font-heading, 'DM Serif Display', serif);
+    font-size: 1.25rem;
+    font-weight: 400;
     color: var(--color-text);
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+/* Description */
+.product-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 16px;
+}
+
+/* Features list */
+.product-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product-features li {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.75);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.4;
+}
+
+.product-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FF6A9C;
+    opacity: 0.7;
+}
+
+.product-card--mentoria .product-features li::before {
+    background: #D4A574;
+}
+
+/* Price */
+.product-price {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.price-current {
+    font-family: var(--font-heading, 'DM Serif Display', serif);
+    font-size: 1.5rem;
+    color: var(--color-text);
+    font-weight: 400;
+}
+
+.price-original {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.35);
+    text-decoration: line-through;
+}
+
+/* CTA Button */
+.product-cta {
+    display: block;
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(135deg, #FF6A9C 0%, #e0558a 100%);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.02em;
+    box-sizing: border-box;
+}
+
+.product-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 106, 156, 0.3);
+}
+
+.product-cta--mentoria {
+    background: linear-gradient(135deg, #D4A574 0%, #c0926a 100%);
+}
+
+.product-cta--mentoria:hover {
+    box-shadow: 0 8px 24px rgba(212, 165, 116, 0.3);
+}
+
+/* Guarantee */
+.product-guarantee {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.35);
+    letter-spacing: 0.03em;
 }
 
 /* ==========================================
-   RESPONSIVO
+   SECTION DIVIDER (Mentorias)
+   ========================================== */
+
+.section-divider {
+    text-align: center;
+    padding: 32px 0 8px;
+}
+
+.section-title {
+    font-family: var(--font-heading, 'DM Serif Display', serif);
+    font-size: 1.4rem;
+    color: #D4A574;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+.section-subtitle {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* ==========================================
+   MENTORIA CARD VARIANT
+   ========================================== */
+
+.product-card--mentoria {
+    border-color: rgba(212, 165, 116, 0.12);
+}
+
+.product-card--mentoria:hover {
+    border-color: rgba(212, 165, 116, 0.2);
+    box-shadow: 0 12px 40px rgba(212, 165, 116, 0.1);
+}
+
+/* ==========================================
+   RESPONSIVE
    ========================================== */
 
 @media (min-width: 480px) {
     .page-wrapper {
-        max-width: 540px;
+        max-width: 580px;
     }
 
-    .courses-grid {
-        gap: 16px;
+    .product-body {
+        padding: 24px;
     }
 
-    .card-info {
-        padding: 14px;
-    }
-
-    .card-info h3 {
-        font-size: 0.85rem;
-    }
-
-    .card-badge {
-        font-size: 0.65rem;
-        padding: 4px 10px;
+    .product-title {
+        font-size: 1.35rem;
     }
 }
 
@@ -111,7 +261,19 @@
         max-width: 640px;
     }
 
-    .courses-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .product-img {
+        aspect-ratio: 16 / 9;
+    }
+
+    .product-body {
+        padding: 28px;
+    }
+
+    .product-title {
+        font-size: 1.5rem;
+    }
+
+    .product-desc {
+        font-size: 0.9rem;
     }
 }
