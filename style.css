@@ -1,187 +1,211 @@
-/* ==========================================
-   CUSTOM PROPERTIES
-   Atualizar em /gerar-design
-   ========================================== */
-
-:root {
-  /* Fonts: Substituir pelo font pairing escolhido */
-  --font-heading: 'Inter', sans-serif;
-  --font-body: 'Inter', sans-serif;
-
-  /* Cores: Definir paleta do projeto */
-  --color-bg: #ffffff;
-  --color-text: #1a1a1a;
-  --color-text-muted: #6b7280;
-  --color-primary: #6366f1;
-  --color-primary-hover: #4f46e5;
-  --color-border: #e5e7eb;
-  --color-error: #ef4444;
-  --color-success: #10b981;
-
-  /* Spacing */
-  --section-py: clamp(4rem, 10vw, 8rem);
-  --container-px: clamp(1rem, 5vw, 2rem);
-  --container-max: 1200px;
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
-/* ==========================================
-   RESET
-   ========================================== */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.hero .image-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
 }
 
-html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
+@media (min-width: 1024px) {
+    .hero {
+        display: block;
+        height: auto;
+        min-height: auto;
+        background-color: #ffffff;
+        /* Matching image background */
+        border-radius: 0;
+        position: relative;
+    }
+
+    .hero .image-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        aspect-ratio: 3168 / 1344;
+    }
 }
 
-body {
-  min-height: 100vh;
-  font-family: var(--font-body);
-  line-height: 1.6;
-  color: var(--color-text);
-  background: var(--color-bg);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.hero .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  line-height: 1.2;
+@media (min-width: 1024px) {
+    .hero .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
 }
 
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
+.hero .overlay {
+    position: absolute;
+    inset: 0;
+    top: 40%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), transparent);
 }
 
-input, button, textarea, select {
-  font: inherit;
+@media (min-width: 1024px) {
+    .hero .overlay {
+        display: none;
+    }
 }
 
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
+.hero .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.25rem;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@media (min-width: 1024px) {
+    .hero .content {
+        position: absolute;
+        width: 60%;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0 5%;
+        display: block;
+        text-align: left;
+        z-index: 20;
+    }
+
+    .hero .content .container {
+        max-width: none;
+        padding: 0;
+    }
 }
 
-ul, ol {
-  list-style: none;
+@media (min-width: 640px) {
+    .hero .content {
+        padding: 2rem;
+    }
 }
 
-/* ==========================================
-   LAYOUT
-   ========================================== */
-
-.container {
-  width: 100%;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding-left: var(--container-px);
-  padding-right: var(--container-px);
+.hero h1 {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    color: white;
+    font-weight: 800;
 }
 
-.section {
-  padding-top: var(--section-py);
-  padding-bottom: var(--section-py);
+@media (min-width: 640px) {
+    .hero h1 {
+        font-size: 1.875rem;
+    }
 }
 
-/* ==========================================
-   FORMS
-   ========================================== */
-
-.form-group {
-  margin-bottom: 1rem;
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 2.25rem;
+    }
 }
 
-.form-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
+@media (min-width: 1024px) {
+    .hero h1 {
+        color: var(--foreground);
+        text-shadow: none;
+        max-width: 700px;
+    }
 }
 
-.form-input {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+.hero h1 .accent {
+    color: var(--accent);
 }
 
-.form-input:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+.hero p {
+    margin-top: 0.5rem;
+    max-width: 28rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
-.form-input.error {
-  border-color: var(--color-error);
+@media (min-width: 1024px) {
+    .hero p {
+        margin-top: 1rem;
+        max-width: 700px;
+        font-size: 1.125rem;
+        color: var(--muted-foreground);
+        text-shadow: none;
+    }
 }
 
-.form-feedback {
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  display: none;
+/* Grids and Sections */
+.catalog-section {
+    padding: 1.25rem 0;
 }
 
-.form-feedback.success {
-  display: block;
-  background: #ecfdf5;
-  color: #065f46;
-  border: 1px solid #a7f3d0;
+@media (min-width: 640px) {
+    .catalog-section {
+        padding: 2rem 0;
+    }
 }
 
-.form-feedback.error {
-  display: block;
-  background: #fef2f2;
-  color: #991b1b;
-  border: 1px solid #fecaca;
+.bg-secondary-light {
+    background-color: #F6F6F6;
 }
 
-/* intl-tel-input */
-.iti {
-  width: 100%;
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
 }
 
-.iti__country-list {
-  z-index: 100;
+@media (min-width: 640px) {
+    .grid-2 {
+        gap: 1.25rem;
+    }
 }
 
-/* ==========================================
-   UTILITIES
-   ========================================== */
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+@media (min-width: 640px) {
+    .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
-.text-muted {
-  color: var(--color-text-muted);
+.max-w-lg {
+    max-width: 32rem;
+    margin-inline: auto;
 }
 
-/* ==========================================
-   PAGE STYLES
-   Gerado por /desenvolver
-   ========================================== */
+.max-w-3xl {
+    max-width: 48rem;
+    margin-inline: auto;
+}
+
+.section-title {
+    margin-bottom: 0.25rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .section-title {
+        font-size: 1.875rem;
+    }
+}
+
+.section-subtitle {
+    margin-bottom: 1.25rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid var(--border);
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 1.5rem 0;
+}

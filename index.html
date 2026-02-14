@@ -1,94 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especialista em Cabelos - Cursos e Mentorias</title>
+    <meta name="description"
+        content="Mentorias e Cursos para Donas de Salão. Domine a técnica, multiplique o lucro e conquiste a liberdade.">
 
-  <!-- SEO: Atualizar em /gerar-copy -->
-  <title>Titulo da Pagina</title>
-  <meta name="description" content="Descricao para SEO">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
 
-  <!-- Open Graph: Atualizar em /gerar-copy -->
-  <meta property="og:title" content="Titulo da Pagina">
-  <meta property="og:description" content="Descricao para SEO">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="">
-  <meta property="og:url" content="">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="/components.css">
+    <link rel="stylesheet" href="/style.css">
 
-  <!-- Favicon: Adicionar em /desenvolver -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-
-  <!-- FONTS: Substituir em /gerar-design (NUNCA usar fontes overused) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <!-- intl-tel-input -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/css/intlTelInput.css">
-
-  <link rel="stylesheet" href="style.css">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
+
 <body>
 
-  <!--
-    ESTRUTURA DA PAGINA
-    ===================
-    Gerada por /gerar-layout e construida por /desenvolver
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="image-container">
+                <picture>
+                    <source media="(min-width: 1024px)"
+                        srcset="/.netlify/images?url=/images/freepik__an-ultraminimalist-highend-editorial-desktop-banne__61820.jpeg&w=1920&q=80">
+                    <img src="/.netlify/images?url=/images/hero-specialist.jpg&w=1200&q=80" alt="Vanessa Barreto"
+                        loading="eager">
+                </picture>
+            </div>
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="container">
+                    <h1>Domine a técnica, multiplique o lucro e conquiste a <span class="accent">liberdade</span> que o
+                        seu salão pode te proporcionar</h1>
+                    <p>Mentorias e Cursos para Donas de Salão</p>
+                </div>
+            </div>
+        </section>
 
-    REGRAS:
-    - Cada secao deve ter arquetipo + constraints unicos
-    - NUNCA repetir padroes entre secoes consecutivas
-    - NUNCA usar: hero centralizado generico, 3 cards, grid simetrico
-    - Manter font pairing consistente em toda pagina
-  -->
+        <!-- Courses Grid -->
+        <section id="catalogo" class="catalog-section bg-secondary-light">
+            <div class="container">
+                <h1 class="section-title">Vanessa Barreto</h1>
+                <p class="section-subtitle">Cursos e Treinamentos</p>
+                <div class="grid-2">
+                    <!-- Card 1 -->
+                    <article class="course-card" data-aos="fade-up">
+                        <span class="badge badge-gold">Treinamento</span>
+                        <h3>MANUAL DOS CACHOS PERFEITOS</h3>
+                        <p class="description">Domine a finalização e os cuidados essenciais para entregar cachos
+                            impecáveis e fidelizar clientes.</p>
+                        <div class="price">R$ 97</div>
+                        <a href="https://wa.me/5500000000000" class="cta-btn">Quero o Manual Completo</a>
+                    </article>
 
-  <main>
-    <!-- Conteudo gerado por /desenvolver -->
-  </main>
+                    <!-- Card 2 -->
+                    <article class="course-card" data-aos="fade-up">
+                        <span class="badge badge-secondary">Lançamento</span>
+                        <h3>DETOX PERFEITO</h3>
+                        <p class="description">Limpeza profunda e desintoxicação capilar completa para preparar os fios
+                            para transformações reais.</p>
+                        <div class="price">R$ 97</div>
+                        <a href="javascript:void(0)" class="cta-btn disabled">EM BREVE</a>
+                    </article>
 
-  <!-- FORMULARIO (template) -->
-  <!--
-  <section id="contato" class="section">
-    <div class="container">
-      <h2>Titulo</h2>
+                    <!-- Card 3 -->
+                    <article class="course-card" data-aos="fade-up">
+                        <span class="badge badge-secondary">Curso</span>
+                        <h3>SELAMENTO PERFEITO</h3>
+                        <p class="description">A técnica avançada para eliminar o frizz e garantir um brilho espelhado
+                            intenso com alta durabilidade.</p>
+                        <div class="price">R$ 197</div>
+                        <a href="https://wa.me/5500000000000" class="cta-btn">Garantir minha Vaga</a>
+                    </article>
 
-      <form name="contato" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-form>
-        <input type="hidden" name="form-name" value="contato">
-        <p hidden><label>Nao preencha: <input name="bot-field"></label></p>
+                    <!-- Card 4 -->
+                    <article class="course-card" data-aos="fade-up">
+                        <span class="badge badge-secondary">Curso</span>
+                        <h3>SOLTURA DE CACHOS</h3>
+                        <p class="description">Aprenda a técnica de soltura mais desejada para liberar o volume e a
+                            definição natural dos fios.</p>
+                        <div class="price">R$ 197</div>
+                        <a href="https://wa.me/5500000000000" class="cta-btn">Quero me Especializar</a>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-        <div class="form-group">
-          <label class="form-label" for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" class="form-input" required autocomplete="name">
+        <!-- Mentorships -->
+        <section class="catalog-section">
+            <div class="container">
+                <h2 class="section-title">Mentorias</h2>
+                <p class="section-subtitle">Acompanhamento premium para quem quer o próximo nível</p>
+                <div class="grid-2 max-w-3xl">
+                    <article class="course-card featured" data-aos="fade-up">
+                        <span class="badge badge-gold">Mentoria</span>
+                        <h3>MENTORIA SALÃO AUTO GERENCIÁVEL</h3>
+                        <p class="description">Acompanhamento estratégico para donas de salão que buscam liberdade e
+                            lucro real com gestão profissional.</p>
+                        <div class="price">R$ 1.497</div>
+                        <a href="https://wa.me/5500000000000" class="cta-btn">Quero Ser Empresária</a>
+                    </article>
+                    <article class="course-card featured" data-aos="fade-up">
+                        <span class="badge badge-gold">Mentoria</span>
+                        <h3>MENTORIA - EFEITO CARACÓIS</h3>
+                        <p class="description">O acompanhamento premium definitivo para se tornar a maior referência
+                            técnica em cabelos cacheados.</p>
+                        <div class="price">R$ 1.997</div>
+                        <a href="https://wa.me/5500000000000" class="cta-btn">Candidatar-se à Mentoria</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" style="text-align: center;">
+            <p style="font-size: 0.875rem; color: var(--muted-foreground); margin: 0;">
+                Vanessa Barreto - © 2025 Todos os direitos reservados.
+            </p>
         </div>
+    </footer>
 
-        <div class="form-group">
-          <label class="form-label" for="email">E-mail</label>
-          <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
-        </div>
 
-        <div class="form-group">
-          <label class="form-label" for="telefone">WhatsApp</label>
-          <input type="tel" id="telefone" name="telefone" class="form-input" required autocomplete="tel">
-        </div>
 
-        <div class="form-feedback"></div>
-        <button type="submit" class="btn">Enviar</button>
-      </form>
-    </div>
-  </section>
-  -->
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Nome. Todos os direitos reservados.</p>
-    </div>
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInput.min.js"></script>
-  <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="/tracking.js"></script>
+    <script>
+        // AOS initialization
+        AOS.init({
+            duration: 800,
+            once: true,
+            disableMutationObserver: true
+        });
+    </script>
 </body>
+
 </html>
