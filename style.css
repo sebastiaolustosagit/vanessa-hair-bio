@@ -1,15 +1,26 @@
 /* Hero Section */
+main {
+    background-color: #F6F6F6;
+}
+
 .hero {
     position: relative;
     width: 100%;
     overflow: hidden;
+    height: auto;
+    min-height: auto;
+    /* Mobile height */
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    background-color: #F6F6F6;
+    /* Matches next section bg */
+    z-index: 10;
 }
 
 .hero .image-container {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: auto;
+    aspect-ratio: 1920 / 500;
 }
 
 @media (min-width: 1024px) {
@@ -34,8 +45,8 @@
 .hero .image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: top;
+    object-fit: contain;
+    object-position: center;
 }
 
 @media (min-width: 1024px) {
@@ -47,12 +58,12 @@
     }
 }
 
-.hero .overlay {
-    position: absolute;
-    inset: 0;
-    top: 40%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), transparent);
+@media (max-width: 1023px) {
+    .hero .overlay {
+        display: none;
+    }
 }
+
 
 @media (min-width: 1024px) {
     .hero .overlay {
@@ -62,10 +73,14 @@
 
 .hero .content {
     position: absolute;
-    bottom: 0;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
-    right: 0;
-    padding: 1.25rem;
+    width: 65%;
+    padding: 0 1rem;
+    text-align: left;
+    z-index: 20;
+    line-height: 1.1;
 }
 
 @media (min-width: 1024px) {
@@ -94,10 +109,20 @@
 }
 
 .hero h1 {
-    font-size: 1.25rem;
+    font-size: 0.9rem;
     line-height: 1.2;
-    color: white;
+    color: var(--foreground);
     font-weight: 800;
+    /* Matching desktop weight */
+    margin-bottom: 0;
+    padding: 0;
+    text-shadow: none;
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.4);
+    /* Subtle white outline for safety if background varies */
+    background: none;
+    border-radius: 0;
+    backdrop-filter: none;
+    display: inline-block;
 }
 
 @media (min-width: 640px) {
@@ -117,6 +142,10 @@
         color: var(--foreground);
         text-shadow: none;
         max-width: 700px;
+        background: none;
+        padding: 0;
+        backdrop-filter: none;
+        display: block;
     }
 }
 
@@ -125,14 +154,12 @@
 }
 
 .hero p {
-    margin-top: 0.5rem;
-    max-width: 28rem;
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.8);
+    display: none;
 }
 
 @media (min-width: 1024px) {
     .hero p {
+        display: block;
         margin-top: 1rem;
         max-width: 700px;
         font-size: 1.125rem;
