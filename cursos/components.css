@@ -1,0 +1,134 @@
+/* Badges */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-secondary {
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+}
+
+.badge-gold {
+    background-color: var(--gold);
+    color: white;
+}
+
+/* Course Card */
+.course-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card);
+    border: 2px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    transition: box-shadow 0.3s ease;
+}
+
+@media (min-width: 640px) {
+    .course-card {
+        padding: 1.5rem;
+    }
+}
+
+.course-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.course-card.featured {
+    border-color: var(--gold);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.course-card h3 {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+    .course-card h3 {
+        font-size: 1.25rem;
+    }
+}
+
+.course-card p.description {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+}
+
+.course-card ul {
+    margin-top: 1rem;
+    flex: 1;
+    list-style: none;
+}
+
+.course-card ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.course-card .price {
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+@media (min-width: 640px) {
+    .course-card .price {
+        font-size: 1.875rem;
+    }
+}
+
+.course-card .cta-btn {
+    display: block;
+    width: 100%;
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(236, 72, 153, 0.25);
+    transition: transform 0.2s;
+}
+
+.course-card .cta-btn:hover {
+    transform: scale(1.02);
+}
+
+.course-card .cta-btn.disabled {
+    background-color: var(--muted);
+    color: var(--muted-foreground);
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none;
+    transform: none;
+}
+
+.course-card .guarantee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+}

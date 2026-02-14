@@ -1,279 +1,211 @@
-/* ==========================================
-   CURSOS - LAYOUT VITRINE
-   O CSS base vem de /bio/style.css
-   ========================================== */
-
-.page-wrapper {
-    max-width: 540px;
-}
-
-/* ==========================================
-   PRODUCT CARDS
-   ========================================== */
-
-.products {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-bottom: 40px;
-}
-
-.product-card {
-    background: var(--color-bg-card);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.product-card:hover {
-    border-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-}
-
-/* Image */
-.product-img {
+/* Hero Section */
+.hero {
     position: relative;
-    aspect-ratio: 16 / 10;
+    width: 100%;
     overflow: hidden;
-    background: #1a1a2e;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
-.product-img img {
+.hero .image-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        display: block;
+        height: auto;
+        min-height: auto;
+        background-color: #ffffff;
+        /* Matching image background */
+        border-radius: 0;
+        position: relative;
+    }
+
+    .hero .image-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        aspect-ratio: 3168 / 1344;
+    }
+}
+
+.hero .image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    object-position: top;
 }
 
-.product-card:hover .product-img img {
-    transform: scale(1.03);
+@media (min-width: 1024px) {
+    .hero .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
 }
 
-/* Gradient fallback for images we don't have yet */
-.product-img--gradient {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg,
-            color-mix(in srgb, var(--card-accent, #FF6A9C) 15%, #0d0d1a) 0%,
-            color-mix(in srgb, var(--card-accent, #FF6A9C) 30%, #1a1a2e) 50%,
-            color-mix(in srgb, var(--card-accent, #FF6A9C) 10%, #0d0d1a) 100%);
-}
-
-.product-img-icon {
-    color: rgba(255, 255, 255, 0.3);
-}
-
-/* Body */
-.product-body {
-    padding: 20px;
-}
-
-/* Tag / Badge */
-.product-tag {
-    display: inline-block;
-    padding: 4px 10px;
-    font-size: 0.65rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    background: rgba(255, 106, 156, 0.15);
-    color: #FF6A9C;
-    border-radius: 6px;
-    margin-bottom: 10px;
-}
-
-.product-tag--mentoria {
-    background: rgba(212, 165, 116, 0.15);
-    color: #D4A574;
-}
-
-/* Title */
-.product-title {
-    font-family: var(--font-heading, 'DM Serif Display', serif);
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: var(--color-text);
-    line-height: 1.3;
-    margin-bottom: 10px;
-}
-
-/* Description */
-.product-desc {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 16px;
-}
-
-/* Features list */
-.product-features {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.product-features li {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.75);
-    padding-left: 20px;
-    position: relative;
-    line-height: 1.4;
-}
-
-.product-features li::before {
-    content: '';
+.hero .overlay {
     position: absolute;
+    inset: 0;
+    top: 40%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), transparent);
+}
+
+@media (min-width: 1024px) {
+    .hero .overlay {
+        display: none;
+    }
+}
+
+.hero .content {
+    position: absolute;
+    bottom: 0;
     left: 0;
-    top: 6px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #FF6A9C;
-    opacity: 0.7;
+    right: 0;
+    padding: 1.25rem;
 }
 
-.product-card--mentoria .product-features li::before {
-    background: #D4A574;
-}
-
-/* Price */
-.product-price {
-    margin-bottom: 16px;
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-}
-
-.price-current {
-    font-family: var(--font-heading, 'DM Serif Display', serif);
-    font-size: 1.5rem;
-    color: var(--color-text);
-    font-weight: 400;
-}
-
-.price-original {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.35);
-    text-decoration: line-through;
-}
-
-/* CTA Button */
-.product-cta {
-    display: block;
-    width: 100%;
-    padding: 14px 24px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-align: center;
-    color: #fff;
-    background: linear-gradient(135deg, #FF6A9C 0%, #e0558a 100%);
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    letter-spacing: 0.02em;
-    box-sizing: border-box;
-}
-
-.product-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(255, 106, 156, 0.3);
-}
-
-.product-cta--mentoria {
-    background: linear-gradient(135deg, #D4A574 0%, #c0926a 100%);
-}
-
-.product-cta--mentoria:hover {
-    box-shadow: 0 8px 24px rgba(212, 165, 116, 0.3);
-}
-
-/* Guarantee */
-.product-guarantee {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-    font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.35);
-    letter-spacing: 0.03em;
-}
-
-/* ==========================================
-   SECTION DIVIDER (Mentorias)
-   ========================================== */
-
-.section-divider {
-    text-align: center;
-    padding: 32px 0 8px;
-}
-
-.section-title {
-    font-family: var(--font-heading, 'DM Serif Display', serif);
-    font-size: 1.4rem;
-    color: #D4A574;
-    font-weight: 400;
-    margin-bottom: 6px;
-}
-
-.section-subtitle {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.45);
-}
-
-/* ==========================================
-   MENTORIA CARD VARIANT
-   ========================================== */
-
-.product-card--mentoria {
-    border-color: rgba(212, 165, 116, 0.12);
-}
-
-.product-card--mentoria:hover {
-    border-color: rgba(212, 165, 116, 0.2);
-    box-shadow: 0 12px 40px rgba(212, 165, 116, 0.1);
-}
-
-/* ==========================================
-   RESPONSIVE
-   ========================================== */
-
-@media (min-width: 480px) {
-    .page-wrapper {
-        max-width: 580px;
+@media (min-width: 1024px) {
+    .hero .content {
+        position: absolute;
+        width: 60%;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0 5%;
+        display: block;
+        text-align: left;
+        z-index: 20;
     }
 
-    .product-body {
-        padding: 24px;
+    .hero .content .container {
+        max-width: none;
+        padding: 0;
     }
+}
 
-    .product-title {
-        font-size: 1.35rem;
+@media (min-width: 640px) {
+    .hero .content {
+        padding: 2rem;
+    }
+}
+
+.hero h1 {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    color: white;
+    font-weight: 800;
+}
+
+@media (min-width: 640px) {
+    .hero h1 {
+        font-size: 1.875rem;
     }
 }
 
 @media (min-width: 768px) {
-    .page-wrapper {
-        max-width: 640px;
+    .hero h1 {
+        font-size: 2.25rem;
     }
+}
 
-    .product-img {
-        aspect-ratio: 16 / 9;
+@media (min-width: 1024px) {
+    .hero h1 {
+        color: var(--foreground);
+        text-shadow: none;
+        max-width: 700px;
     }
+}
 
-    .product-body {
-        padding: 28px;
-    }
+.hero h1 .accent {
+    color: var(--accent);
+}
 
-    .product-title {
-        font-size: 1.5rem;
-    }
+.hero p {
+    margin-top: 0.5rem;
+    max-width: 28rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+}
 
-    .product-desc {
-        font-size: 0.9rem;
+@media (min-width: 1024px) {
+    .hero p {
+        margin-top: 1rem;
+        max-width: 700px;
+        font-size: 1.125rem;
+        color: var(--muted-foreground);
+        text-shadow: none;
     }
+}
+
+/* Grids and Sections */
+.catalog-section {
+    padding: 1.25rem 0;
+}
+
+@media (min-width: 640px) {
+    .catalog-section {
+        padding: 2rem 0;
+    }
+}
+
+.bg-secondary-light {
+    background-color: #F6F6F6;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+    .grid-2 {
+        gap: 1.25rem;
+    }
+}
+
+@media (min-width: 640px) {
+    .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.max-w-lg {
+    max-width: 32rem;
+    margin-inline: auto;
+}
+
+.max-w-3xl {
+    max-width: 48rem;
+    margin-inline: auto;
+}
+
+.section-title {
+    margin-bottom: 0.25rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .section-title {
+        font-size: 1.875rem;
+    }
+}
+
+.section-subtitle {
+    margin-bottom: 1.25rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid var(--border);
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 1.5rem 0;
 }

@@ -97,21 +97,17 @@ a {
 }
 
 .profile-photo {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 16px;
-  border-radius: var(--radius-full);
-  padding: 3px;
-  background: var(--gradient-primary);
-  box-shadow: 0 0 30px rgba(255, 106, 156, 0.3);
+  width: calc(100% + (var(--container-px) * 2));
+  margin: -40px calc(var(--container-px) * -1) 24px;
+  aspect-ratio: 4 / 1;
+  overflow: hidden;
+  border-bottom: 2px solid var(--color-primary);
 }
 
 .profile-photo img {
   width: 100%;
   height: 100%;
-  border-radius: var(--radius-full);
   object-fit: cover;
-  border: 3px solid var(--color-bg);
 }
 
 .profile-name {
@@ -155,7 +151,7 @@ a {
   transform: translateY(-2px);
   border-color: rgba(255, 106, 156, 0.3);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
-              0 0 0 1px rgba(255, 106, 156, 0.1);
+    0 0 0 1px rgba(255, 106, 156, 0.1);
 }
 
 .link-btn:active {
@@ -275,8 +271,7 @@ a {
   }
 
   .profile-photo {
-    width: 140px;
-    height: 140px;
+    margin-top: -60px;
   }
 
   .profile-name {
@@ -293,6 +288,7 @@ a {
    ========================================== */
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
