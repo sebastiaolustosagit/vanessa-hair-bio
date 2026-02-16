@@ -57,7 +57,7 @@
     border-radius: 9999px;
     text-decoration: none;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(255, 106, 156, 0.35);
+    box-shadow: 0 4px 15px rgba(143, 82, 46, 0.35);
     transition: transform 0.2s, box-shadow 0.2s;
     letter-spacing: 0.02em;
     white-space: nowrap;
@@ -72,7 +72,7 @@
 
 .lp-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 106, 156, 0.45);
+    box-shadow: 0 8px 25px rgba(143, 82, 46, 0.45);
 }
 
 /* ===========================================
@@ -103,7 +103,7 @@
    =========================================== */
 
 .lp-hero {
-    background: linear-gradient(135deg, #fff5f8 0%, #ffffff 60%);
+    background: linear-gradient(135deg, #faf6f0 0%, #ffffff 60%);
     padding: 2.5rem 0 0;
     overflow: hidden;
 }
@@ -213,7 +213,7 @@
    =========================================== */
 
 .lp-authority-strip {
-    background-color: #1a1a2e;
+    background-color: #1e1612;
     padding: 3rem 0;
 }
 
@@ -301,7 +301,7 @@
 .stat-item {
     text-align: center;
     padding: 1rem 0.75rem;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(224, 179, 28, 0.3);
     border-radius: 0.75rem;
     display: flex;
     flex-direction: column;
@@ -380,7 +380,7 @@
 .lp-problem__errors {
     max-width: 750px;
     margin: 0 auto 2rem;
-    background: #fff5f8;
+    background: #faf6f0;
     border-left: 4px solid var(--primary);
     border-radius: 0.5rem;
     padding: 1.5rem 1.5rem 1.5rem 2rem;
@@ -439,7 +439,7 @@
    =========================================== */
 
 .lp-qualification {
-    background-color: #f9f9f9;
+    background-color: #f5f0ea;
     padding: 4rem 0;
 }
 
@@ -528,7 +528,7 @@
    =========================================== */
 
 .lp-benefits-expanded {
-    background-color: #1a1a2e;
+    background-color: #1e1612;
     padding: 4rem 0;
 }
 
@@ -612,7 +612,7 @@
 }
 
 .lp-social-proof--alt {
-    background-color: #f9f9f9;
+    background-color: #f5f0ea;
 }
 
 .lp-social-proof__title {
@@ -644,7 +644,7 @@
 }
 
 .testimonial-placeholder {
-    background: #f0f0f0;
+    background: #ece7e1;
     border: 2px dashed var(--border);
     border-radius: 0.75rem;
     padding: 2rem 1.5rem;
@@ -682,7 +682,7 @@
    =========================================== */
 
 .lp-offer {
-    background-color: #1a1a2e;
+    background-color: #1e1612;
     padding: 4rem 0;
 }
 
@@ -707,7 +707,7 @@
 }
 
 .lp-offer__table {
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(224, 179, 28, 0.3);
     border-radius: 0.75rem;
     overflow: hidden;
 }
@@ -726,7 +726,7 @@
 }
 
 .offer-row--header {
-    background: rgba(212, 175, 55, 0.1);
+    background: rgba(224, 179, 28, 0.1);
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 0.85rem;
@@ -766,7 +766,7 @@
 }
 
 .offer-row--total {
-    background: rgba(212, 175, 55, 0.15);
+    background: rgba(224, 179, 28, 0.15);
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     font-size: 1.1rem;
@@ -786,8 +786,8 @@
 }
 
 .lp-offer__card {
-    background: linear-gradient(145deg, #0f0f23, #1a1a2e);
-    border: 2px solid rgba(212, 175, 55, 0.3);
+    background: linear-gradient(145deg, #15100c, #1e1612);
+    border: 2px solid rgba(224, 179, 28, 0.3);
     border-radius: 1rem;
     padding: 2rem;
     margin-bottom: 1.5rem;
@@ -847,7 +847,7 @@
    =========================================== */
 
 .lp-guarantee {
-    background-color: #0f0f23;
+    background-color: #15100c;
     padding: 4rem 0;
 }
 
@@ -894,13 +894,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 20px rgba(224, 179, 28, 0.3);
 }
 
 .lp-offer__seal-inner {
     width: 120px;
     height: 120px;
-    background: #1a1a2e;
+    background: #1e1612;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -930,7 +930,7 @@
    =========================================== */
 
 .lp-faq {
-    background-color: #0f0f23;
+    background-color: #15100c;
     padding: 4rem 0;
 }
 
@@ -1051,7 +1051,7 @@
 .lp-cta-final__box {
     max-width: 450px;
     margin: 0 auto;
-    background: linear-gradient(145deg, #1a1a2e, #0f0f23);
+    background: linear-gradient(145deg, #1e1612, #15100c);
     border: 2px solid var(--accent);
     border-radius: 1rem;
     padding: 2rem 1.25rem;
@@ -1147,7 +1147,7 @@
    =========================================== */
 
 .lp-footer {
-    background-color: #0f0f23;
+    background-color: #15100c;
     padding: 1.5rem 0;
     text-align: center;
 }

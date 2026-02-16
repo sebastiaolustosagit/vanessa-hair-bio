@@ -1,18 +1,18 @@
 :root {
-    --background: hsl(0, 0%, 100%);
-    --foreground: hsl(0, 0%, 15%);
-    --card: hsl(0, 0%, 100%);
-    --card-foreground: hsl(0, 0%, 15%);
-    --primary: hsl(342, 100%, 70%);
+    --background: hsl(35, 20%, 97%);
+    --foreground: hsl(25, 30%, 12%);
+    --card: hsl(35, 20%, 97%);
+    --card-foreground: hsl(25, 30%, 12%);
+    --primary: hsl(28, 55%, 35%);
     --primary-foreground: hsl(0, 0%, 100%);
-    --secondary: hsl(0, 0%, 96%);
-    --secondary-foreground: hsl(0, 0%, 15%);
-    --muted: hsl(0, 0%, 96%);
-    --muted-foreground: hsl(0, 0%, 45%);
-    --accent: hsl(43, 76%, 53%);
-    --accent-foreground: hsl(0, 0%, 15%);
-    --border: hsl(0, 0%, 90%);
-    --gold: hsl(43, 76%, 53%);
+    --secondary: hsl(35, 15%, 93%);
+    --secondary-foreground: hsl(25, 30%, 12%);
+    --muted: hsl(35, 15%, 93%);
+    --muted-foreground: hsl(25, 12%, 42%);
+    --accent: hsl(40, 80%, 55%);
+    --accent-foreground: hsl(25, 30%, 12%);
+    --border: hsl(30, 12%, 85%);
+    --gold: hsl(40, 80%, 55%);
     --radius: 0.75rem;
 }
 

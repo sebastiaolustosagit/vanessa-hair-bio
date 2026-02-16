@@ -1,6 +1,6 @@
 /* Hero Section */
 main {
-    background-color: #F6F6F6;
+    background-color: #ede8e2;
 }
 
 .hero {
@@ -12,7 +12,7 @@ main {
     /* Mobile height */
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    background-color: #F6F6F6;
+    background-color: #ede8e2;
     /* Matches next section bg */
     z-index: 10;
 }
@@ -28,7 +28,7 @@ main {
         display: block;
         height: auto;
         min-height: auto;
-        background-color: #ffffff;
+        background-color: var(--background);
         /* Matching image background */
         border-radius: 0;
         position: relative;
@@ -180,7 +180,7 @@ main {
 }
 
 .bg-secondary-light {
-    background-color: #F6F6F6;
+    background-color: #ede8e2;
 }
 
 .grid-2 {
